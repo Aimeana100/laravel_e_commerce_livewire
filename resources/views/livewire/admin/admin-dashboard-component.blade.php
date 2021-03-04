@@ -1,3 +1,5 @@
+
+@section('page_title', 'Dashboard')
 <div>
           {{-- start cards --}}
           <div class="row row-cards-one">
@@ -148,7 +150,7 @@
                <div class="row row-cards-one">
                 <div class="col-md-12 col-lg-12 col-xl-12">
                 <div class="card">
-                <h5 class="card-header">Latest 10 Product(s) of the Week</h5>
+                <h5 class="card-header">Latest 10 Product(s)</h5>
                 <div class="card-body">
                 <div class="table-responsiv  dashboard-home-table">
                 <div id="poproducts_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row btn-area"><div class="col-sm-4"></div><div class="col-sm-4"></div></div><div class="row"><div class="col-sm-12"><table id="poproducts" class="table table-hover dt-responsive dataTable no-footer dtr-inline" role="grid" width="100%" cellspacing="0">

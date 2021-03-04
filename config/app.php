@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Anathole_Ecommerce'),
+    'name' => env('APP_NAME', '6Kfurnitures'),
 
     /*
     |--------------------------------------------------------------------------

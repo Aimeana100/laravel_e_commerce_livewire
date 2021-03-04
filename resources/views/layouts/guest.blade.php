@@ -1,43 +1,21 @@
-{{--<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <title>{{ config('app.name', 'Laravel') }}</title>
-
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-
-        <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}" defer></script>
-    </head>
-    <body>
-        <div class="font-sans text-gray-900 antialiased">
-            {{ $slot }}
-        </div>
-    </body>
-</html> --}}
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {{-- googlrMap_API_key = AIzaSyD2rZ3VJs5GIxlHKZxbx8P28oGNSldlINI --}}
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Home</title>	
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+	<title> 6kfurniture </title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/LOGvery-small-than-6kf.png') }}">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,400italic,600,600italic,700,700italic&amp;subset=latin,latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome.min.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/owl.carousel.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/flexslider.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/chosen.min.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/color-03.css') }}">
@@ -53,6 +31,7 @@
         <div class="mercado-panels"></div>
     </div>
 
+
 	<!--header-->
 	<header id="header" class="header header-style-1">
 		<div class="container-fluid">
@@ -62,27 +41,23 @@
 						<div class="topbar-menu left-menu">
 							<ul>
 								<li class="menu-item" >
-									<a title="Hotline: (+123) 456 789" href="#" ><span class="icon label-before fa fa-mobile"></span>Hotline: (+123) 456 789</a>
+									<a href="#" style="font-size:18px;font-weight:bolder"><span class="icon label-before fa fa-mobile"></span>contact: (+250) 785307126</a>
 								</li>
 							</ul>
 						</div>
 						<div class="topbar-menu right-menu">
 							<ul>
 								<li class="menu-item lang-menu menu-item-has-children parent">
-									<a title="English" href="#"><span class="img label-before"><img src="assets/images/lang-en.png" alt="lang-en"></span>English<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+									<a title="English" href="#"><span class="img label-before"><img src="{{ asset('assets/images/lang-en.png') }}" alt="lang-en"></span>English<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 									<ul class="submenu lang" >
-										<li class="menu-item" ><a title="hungary" href="#"><span class="img label-before"><img src="assets/images/lang-hun.png" alt="lang-hun"></span>Hungary</a></li>
-										<li class="menu-item" ><a title="german" href="#"><span class="img label-before"><img src="assets/images/lang-ger.png" alt="lang-ger" ></span>German</a></li>
-										<li class="menu-item" ><a title="french" href="#"><span class="img label-before"><img src="assets/images/lang-fra.png" alt="lang-fre"></span>French</a></li>
-										<li class="menu-item" ><a title="canada" href="#"><span class="img label-before"><img src="assets/images/lang-can.png" alt="lang-can"></span>Canada</a></li>
+										<li class="menu-item" ><a title="french" href="#"><span class="img label-before"><img src="{{ asset('assets/images/lang-fra.png') }}" alt="lang-fre"></span>French</a></li>
+										<li class="menu-item" ><a title="kinyarwanda" href="#"><span class="img label-before"><img width="20" height="20" src="{{ asset('assets/images/lang-rw.png') }}" alt="lang-ger" ></span>Kinyarwanda</a></li>
 									</ul>
 								</li>
 								<li class="menu-item menu-item-has-children parent" >
 									<a title="Dollar (USD)" href="#">Dollar (USD)<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 									<ul class="submenu curency" >
-										<li class="menu-item" >
-											<a title="Pound (GBP)" href="#">Pound (GBP)</a>
-										</li>
+
 										<li class="menu-item" >
 											<a title="Euro (EUR)" href="#">Euro (EUR)</a>
 										</li>
@@ -91,51 +66,6 @@
 										</li>
 									</ul>
 								</li>
-								@if(Route::has('login'))
-								  @auth
-									@if(Auth::user()->utype === 'ADM')
-										<li class="menu-item menu-item-has-children parent" >
-											<a title="My Account" href="#">My Account ({{Auth::user()->name}})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
-												<ul class="submenu curency" >
-													<li class="menu-item" >
-														<a title="Dashboard" href="{{ route('admin.dashboard') }}">Dashboard</a>
-													</li>
-
-													<li class="menu-item" >
-														<a title="Logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >Logout</a>
-													</li>
-
-													<form id="logout-form" method="POST" action="{{ route('logout') }}" >
-													@csrf
-													</form>
-
-												</ul>
-										</li>
-									@else
-									<li class="menu-item menu-item-has-children parent" >
-											<a title="My Account" href="#">My Account ({{Auth::user()->name}})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
-												<ul class="submenu curency" >
-													<li class="menu-item" >
-														<a title="Dashboard" href="{{ route('user.dashboard') }}">Dashboard</a>
-													</li>
-
-													<li class="menu-item" >
-														<a title="Logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >Logout</a>
-													</li>
-
-													<form id="logout-form" method="POST" action="{{ route('logout') }}">
-													@csrf
-													</form>
-												</ul>
-										</li>
-									@endif
-
-
-								  @else
-									<li class="menu-item" ><a title="Login or Register" href="{{ route('login') }}">Login</a></li>
-									<li class="menu-item" ><a title="Register or Login" href="{{ route('register') }}">Register</a></li>
-								  @endif
-								@endif
 							</ul>
 						</div>
 					</div>
@@ -145,40 +75,10 @@
 					<div class="mid-section main-info-area">
 
 						<div class="wrap-logo-top left-section">
-							<a href="index.html" class="link-to-home"><img src="{{ asset('assets/images/muhahe_logo.png') }}" alt="mercado"></a>
+							<a href="/" class="link-to-home"  style="max-width: 60px" ><img width="60"  height="60"  style="max-width: 50px" src="{{ asset('assets/images/logo.png') }}" alt="6K"></a>
 						</div>
 
-						<div class="wrap-search center-section">
-							<div class="wrap-search-form">
-								<form action="#" id="form-search-top" name="form-search-top">
-									<input type="text" name="search" value="" placeholder="Search here...">
-									<button form="form-search-top" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
-									<div class="wrap-list-cate">
-										<input type="hidden" name="product-cate" value="0" id="product-cate">
-										<a href="#" class="link-control">All Category</a>
-										<ul class="list-cate">
-											<li class="level-0">All Category</li>
-											<li class="level-1">-Electronics</li>
-											<li class="level-2">Batteries & Chargens</li>
-											<li class="level-2">Headphone & Headsets</li>
-											<li class="level-2">Mp3 Player & Acessories</li>
-											<li class="level-1">-Smartphone & Table</li>
-											<li class="level-2">Batteries & Chargens</li>
-											<li class="level-2">Mp3 Player & Headphones</li>
-											<li class="level-2">Table & Accessories</li>
-											<li class="level-1">-Electronics</li>
-											<li class="level-2">Batteries & Chargens</li>
-											<li class="level-2">Headphone & Headsets</li>
-											<li class="level-2">Mp3 Player & Acessories</li>
-											<li class="level-1">-Smartphone & Table</li>
-											<li class="level-2">Batteries & Chargens</li>
-											<li class="level-2">Mp3 Player & Headphones</li>
-											<li class="level-2">Table & Accessories</li>
-										</ul>
-									</div>
-								</form>
-							</div>
-						</div>
+						@livewire('header-search-component')
 
 						<div class="wrap-icon right-section">
 							<div class="wrap-icon-section wishlist">
@@ -194,7 +94,9 @@
 								<a href="#" class="link-direction">
 									<i class="fa fa-shopping-basket" aria-hidden="true"></i>
 									<div class="left-info">
-										<span class="index">4 items</span>
+										@if(Cart::count() > 0)
+										<span class="index">{{ Cart::count() }} items</span>
+										@endif
 										<span class="title">CART</span>
 									</div>
 								</a>
@@ -211,42 +113,69 @@
 					</div>
 				</div>
 
-				<div class="nav-section header-sticky">
-					<div class="header-nav-section">
-						<div class="container">
-							<ul class="nav menu-nav clone-main-menu" id="mercado_haead_menu" data-menuname="Sale Info" >
-								<li class="menu-item"><a href="#" class="link-term">Weekly Featured</a><span class="nav-label hot-label">hot</span></li>
-								<li class="menu-item"><a href="#" class="link-term">Hot Sale items</a><span class="nav-label hot-label">hot</span></li>
-								<li class="menu-item"><a href="#" class="link-term">Top new items</a><span class="nav-label hot-label">hot</span></li>
-								<li class="menu-item"><a href="#" class="link-term">Top Selling</a><span class="nav-label hot-label">hot</span></li>
-								<li class="menu-item"><a href="#" class="link-term">Top rated items</a><span class="nav-label hot-label">hot</span></li>
-							</ul>
-						</div>
-					</div>
+				<div class="nav-section header-sticky" style="position:sticky">
+					<div class="primary-nav-section d-flex justify-content-between">
 
-					<div class="primary-nav-section">
-						<div class="container">
-							<ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu" >
-								<li class="menu-item home-icon">
-									<a href="/" class="link-term mercado-item-title"><i class="fa fa-home" aria-hidden="true"></i></a>
-								</li>
-								<li class="menu-item">
-									<a href="about-us.html" class="link-term mercado-item-title">About Us</a>
-								</li>
-								<li class="menu-item">
-									<a href="/shop" class="link-term mercado-item-title">Shop</a>
-								</li>
-								<li class="menu-item">
-									<a href="/cart" class="link-term mercado-item-title">Cart</a>
-								</li>
-								<li class="menu-item">
-									<a href="/checkout" class="link-term mercado-item-title">Checkout</a>
-								</li>
-								<li class="menu-item">
-									<a href="contact-us.html" class="link-term mercado-item-title">Contact Us</a>
-								</li>																	
-							</ul>
-						</div>
+					@livewire('category-navigation-component')
+
+
+						<ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu">
+
+							<li class="menu-item">
+								<a href="about-us.html" class="link-term mercado-item-title">About Us</a>
+							</li>
+							{{-- <li class="menu-item">
+								<a href="/shop" class="link-term mercado-item-title">Shop</a>
+							</li> --}}
+							<li class="menu-item">
+								<a href="contact-us.html" class="link-term mercado-item-title">Contact Us</a>
+							</li>
+							@if(Route::has('login'))
+							  @auth
+								@if(Auth::user()->utype === 'ADM')
+								<li style="z-index: 99999" class="menu-item home-icon ">
+									 <div class="dropdown" style="float-left">
+										<a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+										  My Account ({{Auth::user()->name}})
+										</a>
+
+										<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+											<li><a title="Dashboard" href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+											<li><a title="Logout" href="{{ route('admin.categories') }}"  >Categories</a></li>
+											<li><a title="Logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >Logout</a></li>
+											<form id="logout-form" method="POST" action="{{ route('logout') }}" >
+												@csrf
+												</form>
+											</ul>
+									 </div>
+								 </li>
+
+								@else
+							<li style="z-index: 99999" class="menu-item home-icon ">
+									 <div class="dropdown" style="float-left">
+										<a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+										  My Account ({{Auth::user()->name}})
+										</a>
+
+										<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+											<li><a title="Dashboard" href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+											<li><a title="Logout" href="{{ route('admin.categories') }}"  >Categories</a></li>
+											<li><a title="Logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >Logout</a></li>
+											<form id="logout-form" method="POST" action="{{ route('logout') }}" >
+												@csrf
+												</form>
+											</ul>
+									 </div>
+								 </li>
+								@endif
+
+
+							  @else
+								<li class="menu-item"><a title="Login or Register" href="{{ route('login') }}">Login</a></li>
+								<li class="menu-item" ><a title="Register or Login" href="{{ route('register') }}">Register</a></li>
+							  @endif
+							@endif
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -257,45 +186,6 @@
 
 	<footer id="footer">
 		<div class="wrap-footer-content footer-style-1">
-
-			<div class="wrap-function-info">
-				<div class="container">
-					<ul>
-						<li class="fc-info-item">
-							<i class="fa fa-truck" aria-hidden="true"></i>
-							<div class="wrap-left-info">
-								<h4 class="fc-name">Free Shipping</h4>
-								<p class="fc-desc">Free On Oder Over $99</p>
-							</div>
-
-						</li>
-						<li class="fc-info-item">
-							<i class="fa fa-recycle" aria-hidden="true"></i>
-							<div class="wrap-left-info">
-								<h4 class="fc-name">Guarantee</h4>
-								<p class="fc-desc">30 Days Money Back</p>
-							</div>
-
-						</li>
-						<li class="fc-info-item">
-							<i class="fa fa-credit-card-alt" aria-hidden="true"></i>
-							<div class="wrap-left-info">
-								<h4 class="fc-name">Safe Payment</h4>
-								<p class="fc-desc">Safe your online payment</p>
-							</div>
-
-						</li>
-						<li class="fc-info-item">
-							<i class="fa fa-life-ring" aria-hidden="true"></i>
-							<div class="wrap-left-info">
-								<h4 class="fc-name">Online Suport</h4>
-								<p class="fc-desc">We Have Support 24/7</p>
-							</div>
-
-						</li>
-					</ul>
-				</div>
-			</div>
 			<!--End function info-->
 
 			<div class="main-footer-content">
@@ -312,48 +202,21 @@
 										<ul>
 											<li>
 												<i class="fa fa-map-marker" aria-hidden="true"></i>
-												<p class="contact-txt">45 Grand Central Terminal New York,NY 1017 United State USA</p>
+												<p class="contact-txt">Kigali, Kicukiro</p>
 											</li>
 											<li>
 												<i class="fa fa-phone" aria-hidden="true"></i>
-												<p class="contact-txt">(+123) 456 789 - (+123) 666 888</p>
+												<p class="contact-txt">(+250) 785307126</p>
 											</li>
 											<li>
 												<i class="fa fa-envelope" aria-hidden="true"></i>
-												<p class="contact-txt">Contact@yourcompany.com</p>
-											</li>											
+												<p class="contact-txt">6kfurniture22@gmail.com</p>
+											</li>
 										</ul>
 									</div>
 								</div>
 							</div>
 						</div>
-
-						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
-
-							<div class="wrap-footer-item">
-								<h3 class="item-header">Hot Line</h3>
-								<div class="item-content">
-									<div class="wrap-hotline-footer">
-										<span class="desc">Call Us toll Free</span>
-										<b class="phone-number">(+123) 456 789 - (+123) 666 888</b>
-									</div>
-								</div>
-							</div>
-
-							<div class="wrap-footer-item footer-item-second">
-								<h3 class="item-header">Sign up for newsletter</h3>
-								<div class="item-content">
-									<div class="wrap-newletter-footer">
-										<form action="#" class="frm-newletter" id="frm-newletter">
-											<input type="email" class="input-email" name="email" value="" placeholder="Enter your email address">
-											<button class="btn-submit">Subscribe</button>
-										</form>
-									</div>
-								</div>
-							</div>
-
-						</div>
-
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12 box-twin-content ">
 							<div class="row">
 								<div class="wrap-footer-item twin-item">
@@ -364,27 +227,46 @@
 												<li class="menu-item"><a href="#" class="link-term">My Account</a></li>
 												<li class="menu-item"><a href="#" class="link-term">Brands</a></li>
 												<li class="menu-item"><a href="#" class="link-term">Gift Certificates</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Affiliates</a></li>
 												<li class="menu-item"><a href="#" class="link-term">Wish list</a></li>
 											</ul>
 										</div>
 									</div>
 								</div>
 								<div class="wrap-footer-item twin-item">
-									<h3 class="item-header">Infomation</h3>
+								   <h3 class="item-header">Social network</h3>
 									<div class="item-content">
-										<div class="wrap-vertical-nav">
-											<ul>
-												<li class="menu-item"><a href="#" class="link-term">Contact Us</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Returns</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Site Map</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Specials</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Order History</a></li>
-											</ul>
+									<div class="wrap-list-item social-network">
+										<ul>
+											<li><a href="https://twitter.com/Furniture6k" class="link-to-item" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+											<li><a href="https://web.facebook.com/kfurniture.furniturer.9" class="link-to-item" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="link-to-item" title="instagram"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+										</ul>
+									</div>
+										<div class="wrap-footer-item footer-item-second">
+											<h3 class="item-header">Sign up for newsletter</h3>
+											<div class="item-content">
+												<div>
+													<form action="#" id="frm-newletter">
+														<input type="email" class="input-email form-control" name="email" value="" placeholder="Enter your email address"><br>
+														<button class="btn btn-submitx">Subscribe</button>
+													</form>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
+
 							</div>
+						</div>
+						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+						   <div class="wrap-footer-item footer-item-second">
+								<h3 class="item-header">Map</h3>
+                                  <div class="item-content">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.46328416765!2d30.100115015413614!3d-1.968707637308129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xac5a13c74d16a75c!2sSonatubes!5e0!3m2!1sen!2srw!4v1614692765129!5m2!1sen!2srw" width="350" height="400" style="border:1;" allowfullscreen="" loading="lazy"></iframe>
+                                  </div>
+
+							</div>
+
 						</div>
 
 					</div>
@@ -396,30 +278,17 @@
 								<h3 class="item-header">We Using Safe Payments:</h3>
 								<div class="item-content">
 									<div class="wrap-list-item wrap-gallery">
-										<img src="{{ asset('assets/images/payment.png')}}" style="max-width: 260px;">
+										<img src="{{ asset('assets/images/payment.png')}}" style="max-width: 260px;font-weight:bolder">
 									</div>
 								</div>
 							</div>
 						</div>
 
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
-							<div class="wrap-footer-item">
-								<h3 class="item-header">Social network</h3>
-								<div class="item-content">
-									<div class="wrap-list-item social-network">
-										<ul>
-											<li><a href="#" class="link-to-item" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="link-to-item" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="link-to-item" title="pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="link-to-item" title="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="link-to-item" title="vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
+
 						</div>
 
-			
+
 
 					</div>
 				</div>
@@ -427,28 +296,24 @@
 
 
 			</div>
+			<br>
 
-			<div class="coppy-right-box">
+			<div class="coppy-right-box my-4">
 				<div class="container">
-					<div class="coppy-right-item item-left">
-						<p class="coppy-right-text">Copyright © 2021 Muhahe All rights reserved</p>
+					<div class="row">
+					<div class="col-sm-3"></div>
+					<div class="col-sm-6">
+					<div class="coppy-right-item item-left " style="text-align:center">
+						<p class="coppy-right-text">Copyright © 2021 6kfurniture  All rights reserved</p>
 					</div>
-					<div class="coppy-right-item item-right">
-						<div class="wrap-nav horizontal-nav">
-							<ul>
-								<li class="menu-item"><a href="about-us.html" class="link-term">About us</a></li>								
-								<li class="menu-item"><a href="privacy-policy.html" class="link-term">Privacy Policy</a></li>
-								<li class="menu-item"><a href="terms-conditions.html" class="link-term">Terms & Conditions</a></li>
-								<li class="menu-item"><a href="return-policy.html" class="link-term">Return Policy</a></li>								
-							</ul>
-						</div>
 					</div>
-					<div class="clearfix"></div>
+					<div class="col-sm-3"></div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</footer>
-	
+
 	<script src="{{asset('assets/js/jquery-1.12.4.minb8ff.js?ver=1.12.4')}}"></script>
 	<script src="{{asset('assets/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4')}}"></script>
 	<script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
@@ -458,7 +323,8 @@
 	<script src="{{asset('assets/js/jquery.countdown.min.js')}}"></script>
 	<script src="{{asset('assets/js/jquery.sticky.js')}}"></script>
 	<script src="{{asset('assets/js/functions.js')}}"></script>
-    @livewareScripts
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    @livewireScripts
 </body>
 </html>
 

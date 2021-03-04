@@ -166,7 +166,7 @@
 
 					<div class="banner-shop">
 						<a href="#" class="banner-link">
-							<figure><img src="{{ asset('assets/images/shop-banner.jpg') }}" alt=""></figure>
+							<figure><img src="{{ asset('assets/images/products') }}/prod_category_banner_middle.jpg" alt=""></figure>
 						</a>
 					</div>
 

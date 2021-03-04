@@ -16,7 +16,7 @@ class ShopComponent extends Component
     public function mount()
     {
         $this->sorting = "default";
-        $this->pagesize = 12;
+        $this->pagesize = 8;
     }
     public function store($product_id, $product_name, $product_price)
     {
@@ -47,7 +47,8 @@ class ShopComponent extends Component
         else{
             $products = Product::paginate($this->pagesize);
         }
+        $popular_products = Product::inRandomOrder()->limit(4)->get();
         $categories = Category::all();
-         return view('livewire.shop-component', ['products' => $products, 'categories'=>$categories] )->layout('layouts.base');
+         return view('livewire.shop-component', ['products' => $products, 'categories'=>$categories, 'popular_products'=> $popular_products] )->layout('layouts.base');
     }
 }

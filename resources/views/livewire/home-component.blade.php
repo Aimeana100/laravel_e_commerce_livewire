@@ -4,18 +4,18 @@
 
 			<!--MAIN SLIDE-->
 			<div class="wrap-main-slide">
-				<div style=" z-index: -1;"class="slide-carousel owl-carousel style-nav-1" data-items="1" data-loop="1" data-nav="true" data-dots="false">
+				<div style="z-index: -1;"class="slide-carousel owl-carousel style-nav-1" data-items="1" data-loop="1" data-nav="true" data-dots="false">
 					<div class="item-slide">
-						<img src="{{ asset('assets/images/main-slider-1-1.jpg') }}" alt="" class="img-slide">
+						<img src="{{ asset('assets/images/6k_f1BEDrrjjj_top_banner.jpg') }}" alt="" class="img-slide">
 						<div class="slide-info slide-1">
-							<h2 class="f-title">Kid Smart <b>Watches</b></h2>
-							<span class="subtitle">Compra todos tus productos Smart por internet.</span>
-							<p class="sale-info">Only price: <span class="price">$59.99</span></p>
-							<a href="#" class="btn-link">Shop Now</a>
+							<h2 class="f-title">Smart <b>Beds</b></h2>
+							<!--<span class="subtitle">Compra todos tus productos Smart por internet.</span>-->
+							<!--<p class="sale-info">Only price: <span class="price">$59.99</span></p>-->
+							<!--<a href="#" class="btn-link">Shop Now</a>-->
 						</div>
 					</div>
 					<div class="item-slide">
-						<img src="{{ asset('assets/images/main-slider-1-2.jpg') }}" alt="" class="img-slide">
+						<img src="{{ asset('assets/images/6k_f1BEDrrjjj_top_banner.jpg') }}" alt="" class="img-slide">
 						<div class="slide-info slide-2">
 							<h2 class="f-title">Extra 25% Off</h2>
 							<span class="f-subtitle">On online payments</span>
@@ -25,7 +25,7 @@
 						</div>
 					</div>
 					<div class="item-slide">
-						<img src="{{ asset('assets/images/main-slider-1-3.jpg') }}" alt="" class="img-slide">
+						<img src="{{ asset('assets/images/6k_f1BEDrrjjj_top_banner.jpg') }}" alt="" class="img-slide">
 						<div class="slide-info slide-3">
 							<h2 class="f-title">Great Range of <b>Exclusive Furniture Packages</b></h2>
 							<span class="f-subtitle">Exclusive Furniture Packages to Suit every need.</span>
@@ -45,32 +45,32 @@
 						<li class="fc-info-item">
 							<i class="fa fa-truck" aria-hidden="true"></i>
 							<div class="wrap-left-info">
-								<h4 class="fc-name">Free Shipping</h4>
-								<p class="fc-desc">Free On Oder Over $99</p>
+								<h4 class="fc-name"> {{__('lang.FreeShipping')}} </h4>
+								<p class="fc-desc">{{__('lang.FreeOnOrder')}} $99</p>
 							</div>
 
 						</li>
 						<li class="fc-info-item">
 							<i class="fa fa-recycle" aria-hidden="true"></i>
 							<div class="wrap-left-info">
-								<h4 class="fc-name">Guarantee</h4>
-								<p class="fc-desc">30 Days Money Back</p>
+								<h4 class="fc-name"> {{__('lang.guarantee')}} </h4>
+								<p class="fc-desc">30 {{__('lang.DaysMoneyBack')}} </p>
 							</div>
 
 						</li>
 						<li class="fc-info-item">
 							<i class="fa fa-credit-card-alt" aria-hidden="true"></i>
 							<div class="wrap-left-info">
-								<h4 class="fc-name">Safe Payment</h4>
-								<p class="fc-desc">Safe your online payment</p>
+								<h4 class="fc-name"> {{__('lang.SafePayment')}} </h4>
+								<p class="fc-desc"> {{__('lang.SafeYourOnlinePayment')}} </p>
 							</div>
 
 						</li>
 						<li class="fc-info-item">
 							<i class="fa fa-life-ring" aria-hidden="true"></i>
 							<div class="wrap-left-info">
-								<h4 class="fc-name">Online Suport</h4>
-								<p class="fc-desc">We Have Support 24/7</p>
+								<h4 class="fc-name">{{__('lang.onlineSupport')}}</h4>
+								<p class="fc-desc">{{__('lang.WeHaveSupport')}}</p>
 							</div>
 
 						</li>
@@ -81,7 +81,7 @@
 
 			<!-- Featured-->
 			<div class="wrap-show-advance-info-box style-1 border border-1 border-success has-countdown">
-				<h3 class="title-box">Featured Products</h3>
+				<h3 class="title-box"> {{__('lang.FeaturedProducts')}} </h3>
 
 
 
@@ -96,7 +96,7 @@
 											<figure><img src="{{ asset('assets/images/products') }}/{{$product->image}} " alt="{{$product->name}}"></figure>
 										</a>
                                         <div class="wrap-btn">
-                                            <a href="{{ route('product.details', ['slug'=>$product->slug]) }}" class="function-link">quick view</a>
+                                            <a href="{{ route('product.details', ['slug'=>$product->slug]) }}" class="function-link">{{__('lang.QuickView')}}</a>
                                         </div>
 									</div>
 
@@ -125,7 +125,7 @@
 								<span class="flash-item sale-label">sale</span>
 							</div>
 							<div class="wrap-btn">
-								<a href="#" class="function-link">quick view</a>
+								<a href="#" class="function-link">{{__('lang.QuickView')}}</a>
 							</div>
 						</div>
 						<div class="product-info">
@@ -140,10 +140,10 @@
 
 			<!--Latest Products-->
 			<div class="wrap-show-advance-info-box style-1">
-				<h3 class="title-box">Latest Products</h3>
+				<h3 class="title-box">{{__('lang.LatestProducts')}}</h3>
 				<div class="wrap-top-banner">
 					<a href="#" class="link-banner banner-effect-2">
-						<figure><img src="{{ asset('assets/images/digital-electronic-banner.jpg') }}" width="1170" height="240" alt=""></figure>
+						<figure><img src="{{ asset('assets/images/6k6dr2_small_banner.jpg') }}" width="1170" height="240" alt=""></figure>
 					</a>
 				</div>
 				<div class="wrap-products">
@@ -159,10 +159,10 @@
 												<figure><img src="{{ asset('assets/images/products') }}/{{$item->image}}" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
 											</a>
 											<div class="group-flash">
-												<span class="flash-item new-label">new</span>
+												<span class="flash-item new-label">{{__('lang.new')}}</span>
 											</div>
 											<div class="wrap-btn">
-												<a href="#" class="function-link">quick view</a>
+												<a href="#" class="function-link">{{__('lang.QuickView')}}</a>
 											</div>
 										</div>
 										<div class="product-info">
@@ -183,10 +183,10 @@
 
 			<!--Product Categories-->
 			<div class="wrap-show-advance-info-box style-1">
-				<h3 class="title-box">Product Categories</h3>/<small>subjected to change this banner</small>
+				<h3 class="title-box"> {{__('lang.ProductCategories')}} </h3>
 				<div class="wrap-top-banner">
-					<a href="#" class="link-banner banner-effect-2">
-						<figure><img src="{{ asset('assets/images/products') }}/{{$allproducts[0]->image}}" width="1170" height="240" alt=""></figure>
+					<a href="" class="link-banner banner-effect-2">
+						<figure><img src="{{ asset('assets/images/products') }}/prod_category_banner_middle.jpg" width="1170" height="240" alt=""></figure>
 					</a>
 				</div>
 				<div class="wrap-products">
@@ -216,14 +216,14 @@
                                     @foreach ($category->products as $product)
                                     <div class="product product-style-2 equal-elem ">
 										<div class="product-thumnail">
-											<a href="{{ route('product.details',['slug'=>$product->slug]) }}" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-												<figure><img src="{{ asset('assets/images/products') }}/{{$product->image}}" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											<a href="{{ route('product.details',['slug'=>$product->slug]) }}" title="{{$product->name}}">
+												<figure><img src="{{ asset('assets/images/products') }}/{{$product->image}}" width="800" height="800" alt="{{$product->name}}"></figure>
 											</a>
 											<div class="group-flash">
-												<span class="flash-item new-label">new</span>
+												<span class="flash-item new-label"> {{__('lang.new')}} </span>
 											</div>
 											<div class="wrap-btn">
-												<a href="#" class="function-link">quick view</a>
+												<a href="#" class="function-link">{{__('lang.QuickView')}}</a>
 											</div>
 										</div>
 										<div class="product-info">
@@ -246,4 +246,14 @@
 				</div>
 			</div>
 		</div>
+
+
+            {{-- <script>
+        window.addEventListener('livewire:load', function () {
+            // Your JS here.
+            alert('FOUND');
+        })
+    </script> --}}
+
 	</main>
+

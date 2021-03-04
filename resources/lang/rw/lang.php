@@ -1,0 +1,26 @@
+<?php
+ return [
+     'wishlist' => 'WISHLIST',
+     'item'=> 'item',
+     'cart'=> "cart",
+     'AllCategories'=> "All Categories",
+     'FeaturedProducts'=> "Featured Products",
+     'FreeShipping'=> "FREE SHIPPING",
+     'guarantee'=> "GUARANTEE",
+     'SafePayment'=> "SAFE PAYMENT",
+     'OnlinePayment'=> "ONLINE PAYMENT",
+     'AddtoCart'=> "Add To Cart",
+     'LatestProducts'=> "LATEST PRODUCTS",
+     'FeaturedProducts'=> "FEATURED PRODUCTS",
+     'ProductCategories'=> "PRODUCT CATEGORIES",
+     'furnitures'=> "Furnitures",
+     'ContactDetails'=> "CONTACT DETAILS",
+     'MyAccount'=> "My Account",
+     'SocialNetwork'=> "Social Network",
+     'Map'=> "Map",
+     'AboutUs'=> "About Us",
+     'ContactUs'=> "Contact Us",
+     'WeUsingSafePayment'=> "We Using Safe Payment",
+     'Map'=> "Map",
+     ]
+?>

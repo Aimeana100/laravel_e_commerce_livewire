@@ -1,0 +1,42 @@
+<?php
+ return [
+     'wishlist' => 'souhaits',
+     'item'=> 'Objet',
+     'cart'=> "Chariot",
+     'AllCategories'=> "toutes catégories",
+     'FeaturedProducts'=> "Produits en vedette",
+     'PopularProdducts'=> "Produits populaires",
+     'LatestProducts' => "DERNIERS PRODUITS",
+     'ProductCategories'=> "catégories de produits",
+     'FreeShipping'=> "LIVRAISON GRATUITE",
+     'guarantee'=> "GARANTIE",
+     'SafePayment'=> "PAIEMENT SÉCURISÉ",
+     'OnlinePayment'=> "PAIEMENT EN LIGNE",
+     'AddtoCart'=> "Ajouter au panier",
+     'furnitures'=> "Meubles",
+     'ContactDetails'=> "DÉTAILS DU CONTACT",
+     'MyAccount'=> "Mon compte",
+     'SocialNetwork'=> "Réseau social",
+     'Map'=> "Carte",
+     'AboutUs'=> "À propos de nous",
+     'ContactUs'=> "Nous contacter",
+     'WeUsingSafePayment'=> "Nous utilisons le paiement sécurisé",
+     'new'=> "Nouveau",
+     'login'=> "Connexion",
+     'logout'=> "Déconnecter",
+     'register'=> "Inscrire",
+     'FreeOnOrder'=> "Gratuit sur commande",
+     'DaysMoneyBack'=> "Jours de Remboursement",
+     'SafeYourOnlinePayment'=> "Sécurisez votre paiement en ligne",
+     'WeHaveSupport'=> "Une Assistance 24h/24 et 6j/7",
+     'AllRightReserved'=> "Tous droits réservés",
+     'onlineSupport'=> "SUPPORT EN LIGNE",
+     'QuickView'=> "Voir plus",
+     'SubscribeOurNewsLetter' => "S'inscrire aux Newsletters",
+
+     ''=> "",
+     ''=> "",
+
+
+     ]
+?>

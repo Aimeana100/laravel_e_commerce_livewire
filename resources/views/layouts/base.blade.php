@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {{-- googlrMap_API_key = AIzaSyD2rZ3VJs5GIxlHKZxbx8P28oGNSldlINI --}}
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Home</title>
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/muhahe_logo.png') }}">
+	<title> 6kfurniture </title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/LOGvery-small-than-6kf.png') }}">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,400italic,600,600italic,700,700italic&amp;subset=latin,latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome.min.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
@@ -29,6 +31,7 @@
         <div class="mercado-panels"></div>
     </div>
 
+
 	<!--header-->
 	<header id="header" class="header header-style-1">
 		<div class="container-fluid">
@@ -47,16 +50,14 @@
 								<li class="menu-item lang-menu menu-item-has-children parent">
 									<a title="English" href="#"><span class="img label-before"><img src="{{ asset('assets/images/lang-en.png') }}" alt="lang-en"></span>English<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 									<ul class="submenu lang" >
-										<li class="menu-item" ><a title="french" href="#"><span class="img label-before"><img src="{{ asset('assets/images/lang-fra.png') }}" alt="lang-fre"></span>French</a></li>
-										<li class="menu-item" ><a title="german" href="#"><span class="img label-before"><img src="{{ asset('assets/images/lang-ger.png') }}" alt="lang-ger" ></span>Kinyarwanda</a></li>
+										<li lang="lang" class="menu-item" ><a title="french" href="#"><span class="img label-before"><img src="{{ asset('assets/images/lang-fra.png') }}" alt="lang-fre"></span>French</a></li>
+										<li lang="lang" class="menu-item" ><a title="kinyarwanda" href="#"><span class="img label-before"><img width="20" height="20" src="{{ asset('assets/images/lang-rw.png') }}" alt="lang-ger" ></span>Kinyarwanda</a></li>
 									</ul>
 								</li>
 								<li class="menu-item menu-item-has-children parent" >
 									<a title="Dollar (USD)" href="#">Dollar (USD)<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 									<ul class="submenu curency" >
-										<li class="menu-item" >
-											<a title="Pound (GBP)" href="#">Pound (GBP)</a>
-										</li>
+
 										<li class="menu-item" >
 											<a title="Euro (EUR)" href="#">Euro (EUR)</a>
 										</li>
@@ -74,7 +75,7 @@
 					<div class="mid-section main-info-area">
 
 						<div class="wrap-logo-top left-section">
-							<a href="/" class="link-to-home"><img src="{{ asset('assets/images/muhahe_logo.png') }}" alt="mercado"></a>
+							<a href="/" class="link-to-home"  style="max-width: 60px" ><img width="60"  height="60"  style="max-width: 50px" src="{{ asset('assets/images/logo.png') }}" alt="6K"></a>
 						</div>
 
 						@livewire('header-search-component')
@@ -84,7 +85,7 @@
 								<a href="#" class="link-direction">
 									<i class="fa fa-heart" aria-hidden="true"></i>
 									<div class="left-info">
-										<span class="index">0 item</span>
+										<span class="index">0 {{ __('lang.item') }}</span>
 										<span class="title">Wishlist</span>
 									</div>
 								</a>
@@ -94,9 +95,9 @@
 									<i class="fa fa-shopping-basket" aria-hidden="true"></i>
 									<div class="left-info">
 										@if(Cart::count() > 0)
-										<span class="index">{{ Cart::count() }} items</span>
+										<span class="index">{{ Cart::count() }} {{ __('lang.item') }}</span>
 										@endif
-										<span class="title">CART</span>
+										<span class="title"> {{ __('lang.cart') }} </span>
 									</div>
 								</a>
 							</div>
@@ -117,30 +118,31 @@
 
 					@livewire('category-navigation-component')
 
+
 						<ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu">
 
 							<li class="menu-item">
-								<a href="about-us.html" class="link-term mercado-item-title">About Us</a>
+								<a href="{{route('about')}}" class="link-term mercado-item-title"> {{ __('lang.AboutUs') }} </a>
 							</li>
-							<li class="menu-item">
+							{{-- <li class="menu-item">
 								<a href="/shop" class="link-term mercado-item-title">Shop</a>
-							</li>
+							</li> --}}
 							<li class="menu-item">
-								<a href="contact-us.html" class="link-term mercado-item-title">Contact Us</a>
+								<a href="contact-us.html" class="link-term mercado-item-title"> {{ __('lang.ContactUs') }} </a>
 							</li>
 							@if(Route::has('login'))
 							  @auth
 								@if(Auth::user()->utype === 'ADM')
 								<li style="z-index: 99999" class="menu-item home-icon ">
 									 <div class="dropdown" style="float-left">
-										<a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+										<a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
 										  My Account ({{Auth::user()->name}})
 										</a>
 
 										<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 											<li><a title="Dashboard" href="{{ route('admin.dashboard') }}">Dashboard</a></li>
 											<li><a title="Logout" href="{{ route('admin.categories') }}"  >Categories</a></li>
-											<li><a title="Logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >Logout</a></li>
+											<li><a title="Logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" > {{ __('lang.logout') }} </a></li>
 											<form id="logout-form" method="POST" action="{{ route('logout') }}" >
 												@csrf
 												</form>
@@ -158,7 +160,7 @@
 										<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 											<li><a title="Dashboard" href="{{ route('admin.dashboard') }}">Dashboard</a></li>
 											<li><a title="Logout" href="{{ route('admin.categories') }}"  >Categories</a></li>
-											<li><a title="Logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >Logout</a></li>
+											<li><a title="Logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >{{ __('lang.logout') }} </a></li>
 											<form id="logout-form" method="POST" action="{{ route('logout') }}" >
 												@csrf
 												</form>
@@ -169,8 +171,8 @@
 
 
 							  @else
-								<li class="menu-item"><a title="Login or Register" href="{{ route('login') }}">Login</a></li>
-								<li class="menu-item" ><a title="Register or Login" href="{{ route('register') }}">Register</a></li>
+								<li class="menu-item"><a title="Login or Register" href="{{ route('login') }}"> {{ __('lang.login') }}  </a></li>
+								<li class="menu-item" ><a title="Register or Login" href="{{ route('register') }}"> {{ __('lang.register') }} </a></li>
 							  @endif
 							@endif
 						</ul>
@@ -194,7 +196,7 @@
 
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 							<div class="wrap-footer-item">
-								<h3 class="item-header">Contact Details</h3>
+								<h3 class="item-header"> {{__('lang.ContactDetails')}} </h3>
 								<div class="item-content">
 									<div class="wrap-contact-detail">
 										<ul>
@@ -218,36 +220,35 @@
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12 box-twin-content ">
 							<div class="row">
 								<div class="wrap-footer-item twin-item">
-									<h3 class="item-header">My Account</h3>
+									<h3 class="item-header"> {{__('lang.MyAccount')}} </h3>
 									<div class="item-content">
 										<div class="wrap-vertical-nav">
 											<ul>
-												<li class="menu-item"><a href="#" class="link-term">My Account</a></li>
+												<li class="menu-item"><a href="#" class="link-term"> {{__('lang.MyAccount')}} </a></li>
 												<li class="menu-item"><a href="#" class="link-term">Brands</a></li>
 												<li class="menu-item"><a href="#" class="link-term">Gift Certificates</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Affiliates</a></li>
 												<li class="menu-item"><a href="#" class="link-term">Wish list</a></li>
 											</ul>
 										</div>
 									</div>
 								</div>
 								<div class="wrap-footer-item twin-item">
-								   <h3 class="item-header">Social network</h3>
+								   <h3 class="item-header"> {{ __('lang.SocialNetwork') }}</h3>
 									<div class="item-content">
 									<div class="wrap-list-item social-network">
 										<ul>
-											<li><a href="#" class="link-to-item" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="link-to-item" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="link-to-item" title="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+											<li><a href="https://twitter.com/Furniture6k" class="link-to-item" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+											<li><a href="https://web.facebook.com/kfurniture.furniturer.9" class="link-to-item" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="link-to-item" title="instagram"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
 										</ul>
 									</div>
 										<div class="wrap-footer-item footer-item-second">
-											<h3 class="item-header">Sign up for newsletter</h3>
+											<h3 class="item-header"> {{__('lang.SubscribeOurNewsLetter')}} </h3>
 											<div class="item-content">
 												<div>
 													<form action="#" id="frm-newletter">
-														<input type="email" class="input-email" name="email" value="" placeholder="Enter your email address"><br>
-														<button class="btn btn-success mt-2">Subscribe</button>
+														<input type="email" class="input-email form-control" name="email" value="" placeholder="Enter your email address"><br>
+														<button class="btn btn-submitx">Subscribe</button>
 													</form>
 												</div>
 											</div>
@@ -259,8 +260,10 @@
 						</div>
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 						   <div class="wrap-footer-item footer-item-second">
-								<h3 class="item-header">Google map at all</h3>
-
+								<h3 class="item-header"> {{__('lang.Map')}} </h3>
+                                  <div class="item-content">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.46328416765!2d30.100115015413614!3d-1.968707637308129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xac5a13c74d16a75c!2sSonatubes!5e0!3m2!1sen!2srw!4v1614692765129!5m2!1sen!2srw" width="350" height="350" style="border:1;" allowfullscreen="" loading="lazy"></iframe>
+                                  </div>
 
 							</div>
 
@@ -272,7 +275,7 @@
 
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 							<div class="wrap-footer-item">
-								<h3 class="item-header">We Using Safe Payments:</h3>
+								<h3 class="item-header"> {{__('lang.WeUsingSafePayment')}} :</h3>
 								<div class="item-content">
 									<div class="wrap-list-item wrap-gallery">
 										<img src="{{ asset('assets/images/payment.png')}}" style="max-width: 260px;font-weight:bolder">
@@ -301,7 +304,7 @@
 					<div class="col-sm-3"></div>
 					<div class="col-sm-6">
 					<div class="coppy-right-item item-left " style="text-align:center">
-						<p class="coppy-right-text">Copyright © 2020 Surfside Media. All rights reserved</p>
+						<p class="coppy-right-text">Copyright {{--©--}}&copy; @php echo date("Y"); @endphp 6kfurniture  {{__('AllRightReserved')}}</p>
 					</div>
 					</div>
 					<div class="col-sm-3"></div>
@@ -311,6 +314,7 @@
 		</div>
 	</footer>
 
+    @stack('scripts')
 	<script src="{{asset('assets/js/jquery-1.12.4.minb8ff.js?ver=1.12.4')}}"></script>
 	<script src="{{asset('assets/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4')}}"></script>
 	<script src="{{asset('assets/js/bootstrap.min.js')}}"></script>

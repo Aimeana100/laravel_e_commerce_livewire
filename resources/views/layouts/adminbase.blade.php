@@ -13,7 +13,7 @@
     <link href="{{asset('admin_assets/css/theme.css')}}" rel="stylesheet" media="all"> --}}
 
 
-{{-- <link rel="icon" type="image/x-icon" href="https://royalscripts.com/demo/kingcommerce/assets/images/1571567283favicon.png" /> --}}
+<link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/LOGvery-small-than-6kf.png') }}">
 
 <link href="https://royalscripts.com/demo/kingcommerce/assets/admin/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -63,7 +63,7 @@
     <li class="login-profile-area">
     <a class="dropdown-toggle-1" href="javascript:;">
     <div class="user-img">
-    <img src="https://royalscripts.com/demo/kingcommerce/assets/images/admins/1556780563user.png" alt="">
+    <img src="{{ asset('admin_assets/images/default-user-image.jpg') }} " alt="">
     </div>
     </a>
     <div class="dropdown-menu">

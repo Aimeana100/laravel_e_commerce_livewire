@@ -3,13 +3,30 @@
 namespace App\Http\Livewire;
 
 use Cart;
+use session;
 use App\Models\Product;
 use Livewire\Component;
 use App\Models\Category;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\App;
 
 class HomeComponent extends Component
 {
+    // public $lang;
+
+    // public function mount($lang)
+    // {
+
+    //     if (session()->has('locale')) {
+    //         $this->lang = session()->has('locale');
+    //     }
+    //     else
+    //     {
+    //         $this->lang = $lang;
+
+    //     }
+    // }
+
 
     public function store($product_id, $product_name, $product_price)
     {
@@ -19,6 +36,7 @@ class HomeComponent extends Component
         return redirect()->route('product.cart');
 
     }
+
     public function render()
     {
         //Getting count
